@@ -1,0 +1,279 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+:root{
+    --eraser-before-transform: translateY(0%);
+}
+img{
+    /* display: none; */
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    visibility: hidden;
+    
+}
+canvas{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: none;
+    box-shadow: 
+      -5px -5px 8px rgb(236, 227, 227),
+      5px 5px 8px rgb(54, 52, 52)
+    ;
+}
+.canvas-one{
+    z-index: 1;
+}
+.canvas-two{
+    z-index: 2;
+    box-shadow: none;
+}
+
+.notice-board{
+    position: absolute;
+    top: 5%;
+    user-select: none;
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+}
+code{
+    padding: 0.3em 0.7em;
+    background-color: navy;
+    color: white;
+    border-radius: 15px;
+}
+.notice-board-rotate{
+    left: 0;
+}
+.upload{
+    position: relative;
+    width: 50vw;  
+    height: unset;
+    aspect-ratio: 3/2;
+    border: 3px dashed black;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 360ms ease-in-out; 
+    z-index: 0;
+}
+.upload-rotate{
+    width: unset;
+    height: 90vh;
+    aspect-ratio: 2/3;
+}
+.upload:hover{
+    border-color: rgb(161, 15, 219);
+}
+form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cross{
+    width: clamp(50px, 15vw , 200px);
+    transition: all 200ms linear;
+    z-index: -1;
+}
+.cross path{
+    fill: rgb(161, 15, 219);
+}
+input[type='file']{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+input[type='file']:hover + svg path{
+    fill: black;
+}
+input[type='file']:hover + svg {
+    transform: translateY(-5px);
+}
+.setting,.picker{
+    position: absolute;
+    left: 0;
+    width: max-content;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5em;
+    flex-wrap: wrap;
+    background-color: rgb(178, 187, 231);
+    padding: 1em;
+    box-shadow: 3px 3px 5px rgb(54, 52, 52);
+    transform: translateX(-110%);
+    transition: all 360ms cubic-bezier(.37,-0.45,.63,1.56);
+}
+.setting-active{
+    transform: translateX(0%);
+}
+.setting-component,.picker-component{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 95px;
+    height: 50px;
+    padding: 0.5em;
+    background-color: hsl(0 0% 50% / 0.5);
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 200ms linear;
+    box-shadow: 
+      -3px -3px 5px rgb(236, 227, 227),
+      3px 3px 5px rgb(54, 52, 52)
+    ;
+}
+.setting-component svg,.picker-component svg{
+    width: 100%;
+    height: 100%;
+}
+.setting-component p{
+    font-size: 2rem;
+    font-weight: bold;
+}
+.setting-component:hover path{
+    fill: blue
+}
+.setting-component:hover p{
+    color: blue
+}
+.picker{
+    left:unset;
+    right: 0;
+    transform: translateX(110%);
+    box-shadow: -3px -3px 5px rgb(126, 118, 118);
+}
+.picker-component:hover path{
+    fill: blue
+}
+.for-edit,.for-crop{
+    display: flex;
+    flex-direction: column;
+    gap: 1.8em;
+}
+.size{
+    height: max-content;
+    user-select: none;
+    pointer-events: none;
+    letter-spacing: 2px;
+}
+.size p {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.size-display{
+    font-size: 2rem;
+}
+
+.eraser{
+    pointer-events: none;
+    position: relative;
+    overflow: hidden;
+}
+.eraser::before{
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    background-image: linear-gradient(
+         to top left, rgb(53, 44, 44),
+          rgba(221, 201, 201, 0.788) 50%,
+          rgb(53, 44, 44) 90% 
+    );
+    opacity: 0.5;
+    transform: var(--eraser-before-transform);
+    transform-origin: bottom;
+    transition: all 240ms linear;
+}
+.save-btn,.ok-btn{
+    font-size: 1.3rem;
+    letter-spacing: 1.5px;
+}
+.save-btn:hover,.ok-btn:hover{
+    color: blue;
+}
+.resize {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 3px dotted rgb(91, 20, 94);
+    cursor: move;
+    display: none;
+    z-index: 3;
+    box-shadow: 0 0 1000px hsl(0 0% 50%);
+}
+.resizer{
+    position: absolute;
+    width: 40px;
+    height: 30px;
+}
+.top-left{
+    left: -3px;
+    top: -3px;
+    border-top: 5px solid blue;
+    border-left: 5px solid blue;
+}
+.top-right{
+    right: -3px;
+    top: -3px;
+    border-top: 5px solid blue;
+    border-right: 5px solid blue;
+}
+.bottom-left{
+    left: -3px;
+    bottom: -3px;
+    border-bottom: 5px solid blue;
+    border-left: 5px solid blue;
+}
+.bottom-right{
+    right: -3px;
+    bottom: -3px;
+    background-color: hsl(0 0% 90% / 0.3);
+    border-bottom: 5px solid blue;
+    border-right: 5px solid blue;
+    cursor: pointer;
+    user-select: none;
+}
+.for-color-adjust{
+    display: flex;
+    flex-direction: column;
+    gap: 1.3em;
+    margin-bottom: 1.3em;
+}
+.red,.blue,.green{
+    display: flex;
+    gap: 1em;
+    font-size: 1.3rem;
+}
+.red{
+    color: rgb(224, 42, 42);
+}
+.blue{
+    color: rgb(38, 38, 221);
+}
+.green{
+    color: rgb(22, 141, 22);
+}
+:is(.red,.blue,.green) label{
+    user-select: none;
+}
+input[type='range']{
+    cursor: pointer;
+}
+.download-btn{
+    color: rgb(129, 7, 129);
+}
+.download-btn:hover{
+    color: white;
+}

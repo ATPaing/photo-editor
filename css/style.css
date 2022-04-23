@@ -1,0 +1,75 @@
+*,*::before,*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Secular One', sans-serif;
+    height: 100vh;
+    overflow: hidden;
+    background: rgb(238,174,202);
+    background: linear-gradient(
+        180deg, 
+        rgba(238,174,202,1) 8%, 
+        rgba(247,194,230,1) 27%,
+        rgba(233,214,210,1) 54%, 
+        rgba(206,148,233,1) 100%
+    );
+}
+a{
+    display: inline-block;
+    text-decoration: none;
+}
+/* main page */
+.main-page{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3em; 
+}
+.select-upload,.select-take-picture{
+
+    border: 3px solid transparent;
+    border-radius: 10px;
+    font-size: clamp(0.8rem, 2.3vw , 1.3rem);
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+    letter-spacing: 2px;
+    box-shadow: 
+      -8px -8px 16px rgb(236, 227, 227),
+      8px 8px 16px rgb(141, 133, 133)
+    ;
+    transition: all 100ms linear;
+}
+.select-upload{
+    
+    background-color: #A423F3;
+}
+.select-take-picture{
+    background-color: whitesmoke;
+}
+.select-upload a{
+    padding: 0.5em 1em;
+    color: white;
+}
+.select-take-picture a{
+    padding: 0.5em 1em;
+    color: #A423F3;
+}
+:is(.select-upload,.select-take-picture):hover{
+    transform: translateY(-5px);
+}
+.select-upload:hover{
+    background-color: white;
+}
+.select-take-picture:hover{
+    background-color: black;
+}
+.select-upload:hover a{
+    color:black;
+}
+.select-take-picture:hover a{
+    color:white;
+}
