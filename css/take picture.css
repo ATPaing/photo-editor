@@ -25,7 +25,8 @@ code{
 .setting,.picker{
     position: absolute;
     left: 0;
-    width: max-content;
+    width: 20vw;
+    max-width: 100px;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -45,7 +46,8 @@ code{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 95px;
+    width: 100%;
+    max-width: 95px;
     height: 50px;
     padding: 0.5em;
     background-color: hsl(0 0% 50% / 0.5);
@@ -190,6 +192,7 @@ canvas{
     display: flex;
     flex-direction: column;
     gap: 1.8em;
+    width: 100%;
 }
 .size{
     height: max-content;
@@ -240,6 +243,7 @@ canvas{
     flex-direction: column;
     gap: 1.3em;
     margin-bottom: 1.3em;
+    width: 100%;
 }
 .red,.blue,.green{
     display: flex;
