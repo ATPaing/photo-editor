@@ -16,11 +16,9 @@ const ctxTwo = canvasTwo.getContext('2d')
 
 const editSection = document.querySelector('.for-edit')
 const cropSection = document.querySelector('.for-crop')
-const colorAdjustSection = document.querySelector('.for-color-adjust')
 const pencilBtn = document.querySelector('.pencil')
 const eraserBtn = document.querySelector('.eraser')
 const colorInput = document.querySelector('input[type="color"]')
-const colorRanges = document.querySelectorAll('input[type="range"]')
 const sizeDisplay = document.querySelector('.size-display')
 const okBtn = document.querySelector('.ok-btn')
 const saveBtn = document.querySelector('.save-btn')
@@ -108,21 +106,21 @@ settingComponents.forEach((SC,i) => {
         if(i === 0){
             editSection.style.display = 'flex'
             cropSection.style.display = 'none'
-            colorAdjustSection.style.display = 'none'
+            
             resize.style.display = 'none'
             canvasTwo.style.display = 'block'
         }
         if(i === 1){
             editSection.style.display = 'none'
             cropSection.style.display = 'flex'
-            colorAdjustSection.style.display = 'none'
+            
             resize.style.display = 'block'
             canvasTwo.style.display = 'none'       
         }
         if(i === 2){
             editSection.style.display = 'none'
             cropSection.style.display = 'none'
-            colorAdjustSection.style.display = 'flex'
+            
             resize.style.display = 'none'
             canvasTwo.style.display = 'none'  
         }
@@ -366,37 +364,4 @@ okBtn.addEventListener('click', doCropping)
 downloadBtn.addEventListener('click',downloadImage)
 
 
-let colorChangeState = false
-let imgData = null
-let redRangeInput = null
-let blueRangeInput = null
 
-
-colorRanges.forEach((CR,i) => {
-    CR.addEventListener('mousedown', () => {
-        colorChangeState = true
-        imgData = ctxOne.getImageData(0,0,canvasOne.width,canvasOne.height)
-        data = imgData.data
-    })
-    window.addEventListener('mouseup', () => {
-        colorChangeState = false
-    })
-    CR.addEventListener('mousemove', () => {
-        if(!colorChangeState){
-            return
-        }
-        if(i === 0 ){
-            redRangeInput = colorRanges[i].value
-        }else if(i === 1){
-            blueRangeInput = colorRanges[i].value
-        }
-        for(let j = 0; j < data.length; j += 4){
-            if(i === 0 ){
-                data[0 + j] =  redRangeInput 
-            }else if( i === 1 ){
-                data[2 + j] =  blueRangeInput
-            }
-        }
-        ctxOne.putImageData(imgData,0,0)
-    })
-})
