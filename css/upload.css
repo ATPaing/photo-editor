@@ -12,8 +12,7 @@ img{
     width: 100%;
     height: 100%;
     z-index: -1;
-    visibility: hidden;
-    
+    visibility: hidden;   
 }
 canvas{
     position: absolute;
@@ -39,6 +38,7 @@ canvas{
     user-select: none;
     font-size: 1.1rem;
     letter-spacing: 2px;
+    margin-inline: auto;
 }
 code{
     padding: 0.3em 0.7em;
@@ -99,7 +99,8 @@ input[type='file']:hover + svg {
 .setting,.picker{
     position: absolute;
     left: 0;
-    width: max-content;
+    width: 20vw;
+    max-width: 100px;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -112,6 +113,7 @@ input[type='file']:hover + svg {
     transform: translateX(-110%);
     transition: all 360ms cubic-bezier(.37,-0.45,.63,1.56);
 }
+
 .setting-active{
     transform: translateX(0%);
 }
@@ -119,7 +121,8 @@ input[type='file']:hover + svg {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 95px;
+    width: 100%;
+    max-width: 95px;
     height: 50px;
     padding: 0.5em;
     background-color: hsl(0 0% 50% / 0.5);
@@ -150,6 +153,7 @@ input[type='file']:hover + svg {
     right: 0;
     transform: translateX(110%);
     box-shadow: -3px -3px 5px rgb(126, 118, 118);
+    width: max-content
 }
 .picker-component:hover path{
     fill: blue
@@ -158,6 +162,7 @@ input[type='file']:hover + svg {
     display: flex;
     flex-direction: column;
     gap: 1.8em;
+    width: 100%;
 }
 .size{
     height: max-content;
@@ -197,7 +202,7 @@ input[type='file']:hover + svg {
     transition: all 240ms linear;
 }
 .save-btn,.ok-btn{
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     letter-spacing: 1.5px;
 }
 .save-btn:hover,.ok-btn:hover{
@@ -250,6 +255,7 @@ input[type='file']:hover + svg {
     flex-direction: column;
     gap: 1.3em;
     margin-bottom: 1.3em;
+    width: 100%;
 }
 .red,.blue,.green{
     display: flex;
