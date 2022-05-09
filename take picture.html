@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Photo Editor</title>
+    <title>Document</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/take picture.css">
 </head>
@@ -24,9 +24,6 @@
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M156.5 113V222.5C156.5 250.114 178.886 272.5 206.5 272.5H274.5V163C274.5 135.386 252.114 113 224.5 113H156.5ZM66 113V290C66 317.614 88.3858 340 116 340H274.5V346C274.5 365.606 290.394 381.5 310 381.5C329.606 381.5 345.5 365.606 345.5 346V340H350.25C368.89 340 384 324.89 384 306.25C384 287.61 368.89 272.5 350.25 272.5H345.5V100C345.5 72.3858 323.114 50 295.5 50H156.5V46.25C156.5 21.2591 136.241 1 111.25 1C86.2591 1 66 21.2591 66 46.25V50H34.5H32.5C15.103 50 1 64.103 1 81.5C1 98.897 15.103 113 32.5 113H66Z" fill="black"/>
                 <path d="M156.5 113V112.5H156V113H156.5ZM274.5 272.5V273H275V272.5H274.5ZM66 113H66.5V112.5H66V113ZM274.5 340H275V339.5H274.5V340ZM345.5 340V339.5H345V340H345.5ZM345.5 272.5H345V273H345.5V272.5ZM156.5 50H156V50.5H156.5V50ZM66 50V50.5H66.5V50H66ZM157 222.5V113H156V222.5H157ZM206.5 272C179.162 272 157 249.838 157 222.5H156C156 250.39 178.61 273 206.5 273V272ZM274.5 272H206.5V273H274.5V272ZM274 163V272.5H275V163H274ZM224.5 113.5C251.838 113.5 274 135.662 274 163H275C275 135.11 252.39 112.5 224.5 112.5V113.5ZM156.5 113.5H224.5V112.5H156.5V113.5ZM65.5 113V290H66.5V113H65.5ZM65.5 290C65.5 317.89 88.1096 340.5 116 340.5V339.5C88.6619 339.5 66.5 317.338 66.5 290H65.5ZM116 340.5H274.5V339.5H116V340.5ZM274 340V346H275V340H274ZM274 346C274 365.882 290.118 382 310 382V381C290.67 381 275 365.33 275 346H274ZM310 382C329.882 382 346 365.882 346 346H345C345 365.33 329.33 381 310 381V382ZM346 346V340H345V346H346ZM345.5 340.5H350.25V339.5H345.5V340.5ZM350.25 340.5C369.166 340.5 384.5 325.166 384.5 306.25H383.5C383.5 324.613 368.613 339.5 350.25 339.5V340.5ZM384.5 306.25C384.5 287.334 369.166 272 350.25 272V273C368.613 273 383.5 287.887 383.5 306.25H384.5ZM350.25 272H345.5V273H350.25V272ZM346 272.5V100H345V272.5H346ZM346 100C346 72.1096 323.39 49.5 295.5 49.5V50.5C322.838 50.5 345 72.6619 345 100H346ZM295.5 49.5H156.5V50.5H295.5V49.5ZM157 50V46.25H156V50H157ZM157 46.25C157 20.983 136.517 0.5 111.25 0.5V1.5C135.965 1.5 156 21.5353 156 46.25H157ZM111.25 0.5C85.983 0.5 65.5 20.983 65.5 46.25H66.5C66.5 21.5353 86.5353 1.5 111.25 1.5V0.5ZM65.5 46.25V50H66.5V46.25H65.5ZM66 49.5H34.5V50.5H66V49.5ZM34.5 49.5H32.5V50.5H34.5V49.5ZM32.5 49.5C14.8269 49.5 0.5 63.8269 0.5 81.5H1.5C1.5 64.3792 15.3792 50.5 32.5 50.5V49.5ZM0.5 81.5C0.5 99.1731 14.8269 113.5 32.5 113.5V112.5C15.3792 112.5 1.5 98.6208 1.5 81.5H0.5ZM32.5 113.5H66V112.5H32.5V113.5Z" fill="black"/>
             </svg>    
-        </div>
-        <div class="setting-component " title="color control">
-            <p>C</p>
         </div>
       </section>
       
@@ -83,17 +80,13 @@
         <div class="for-crop">
             <div class="ok-btn picker-component ">OK</div>
         </div>
-        <div class="for-color-adjust">
-            <div class="red">
-                <label for="red-range">R</label>
-                <input type="range" id="red-range" min="0" max="255">
-            </div>
-            <div class="blue">
-                <label for="blue-range">B</label>
-                <input type="range" id="blue-range" min="0" max="255">
-            </div>
+
         <div>
-            <a  class="download-btn picker-component ">Download</a>
+            <a  class="download-btn picker-component " title="download">
+                <svg width="700" height="840" viewBox="0 0 700 840" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M417.5 335.661V0H263.5V335.661H138L340 600L556 335.661H417.5ZM134.776 447V729.5H545.896V447H700V840H0V447H134.776Z" fill="black"/>
+                </svg>  
+            </a>
         </div>
     </section>
 
